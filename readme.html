@@ -2,20 +2,35 @@
 
 <html>
   <head>
-    <title>jsI18n-Readme</title>
+    <title data-trans="title">jsI18n - Readme</title> <!-- Ignored by IE -->
+    <script src="jsi18n.js"></script>
+    <script src="sv.js"></script>
+    <script type="text/javascript">
+      //Changes locale
+      function changeLocale(locale)
+      {
+        jsI18n.setLocale(locale)
+        jsI18n.processPage()
+      }
+    </script>
     <style type="text/css">
-      p {max-width:40em}
+       body {max-width:40em}
       dt {font-weight:bold}
+      dd {margin-top:0.25em; margin-bottom:0.25em}
     </style>
   </head>
-  <body>
+  <body onload="jsI18n.processPage()">
     <h1>jsI18n</h1>
     <p>
+      <strong><span data-trans="change-lang">Change language:</span></strong>
+      <a href="readme.html">en</a> <!-- Entire reload required -->
+      <a href="javascript:changeLocale('sv')">sv</a>
+    </p>
+    <p data-trans="intro">
       jsI18n is a simple javascript library for putting I18n on the client side.
     </p>
-
-    <h2>How do I use it for my HTML?</h2>
-    <p>
+    <h2 data-trans="howto-html">How do I use it for my HTML?</h2>
+    <p data-trans="howto-html-1">
       It's simple. Just put in a reference to "jsi18n.js" and your locale files,
       and add the <em>data-trans</em> attribute to the elements whose contents
       you want to translate, like this:
@@ -23,41 +38,41 @@
     <p> 
       &lt;div <strong>data-trans="cat"</strong>&gt;Default value&lt;div&gt;
     </p>
-    <p>
-      Then call "jsI18n.processPage" after the page has finished loading.
+    <p data-trans="howto-html-2">
+      Then call <em>jsI18n.processPage</em> after the page has finished loading.
       A simple way to do this is to put the code in the <em>onload </em>event of
       the body tag.
     </p>
-    <p>
+    <p data-trans="howto-html-3">
       This will look up the relevant text for the keyword "cat" in the
       translation table for the current locale and replace the contents
       of the tag with that text. If the keyword is undefined, or if the 
       current locale is not set, the default value (original content) will
       be used.
     </p>
-    <p>
+    <p data-trans="howto-html-4">
       To get a full example, check out the source of this readme!
     </p>
-    <h2>How do I use it for my javascript?</h2>
+    <h2 data-trans="howto-js">How do I use it for my javascript?</h2>
     <p>
       <code>
         var cat = jsI18n.translate("cat") <br/>
         cat == jsI18n.t("cat") //Short form
       </code>
     </p>
-    <h2>How do I change the current locale?</h2>
-    <p>
+    <h2 data-trans="howto-change-locale">How do I change the current locale?</h2>
+    <p data-trans="change-locale-content">
       Just call <em>jsI18n.setLocale(locale)</em>. It is up to you how to
       retrieve the locale value.
     </p>
-    <h2>What about the locale files?</h2>
-    <p>
+    <h2 data-trans="locale-files">What about the locale files?</h2>
+    <p data-trans="locale-files-1">
       The locale files are just javascript files that call
       the function <em>jsI18n.addLocale(locale, translations)</em>,
       where locale is a string used as an identifier, and translations
       is an associative array mapping keys to actual translations.
     </p>
-    <p> 
+    <p data-trans="locale-files-2"> 
       So, using our cat example we would put the following in sv.js:
     </p>
     <p>
@@ -67,41 +82,42 @@
         jsI18n.addLocale("sv", translations")
       </code>
     </p>
-    <p>
+    <p data-trans="locale-files-3">
       <strong>Important:</strong>Make sure you include your locale files into
         your HTML <em>after</em> you have included "jsi18n.js".
     </p>
-    <h1>Pros and Cons</h1>
-    <p>
+    <h2 data-trans="pros-cons">Pros and Cons</h2>
+    <p data-trans="pros-cons-1">
       There are a few things you should think about before using this approach
       for internationalization.
     </p>
     <dl>
-      <dt>What if javascript is turned off?</dt>
-      <dd>
+      <dt data-trans="js-turned-off">What if javascript is turned off?</dt>
+      <dd data-trans="js-turned-off-1">
         If your site depends on JS anyway, this does not matter as much
         as you have probably thought about it anyway.<br/><br/>
         If it doesn't, using jsI18n simply means your site will only
         be available in the default locale (as the default text will be used).
       </dd>
-      <dt>Slower page download</dt>
-      <dd>
+      <dt data-trans="slower-download">Slower page download</dt>
+      <dd data-trans="slower-download-1">
         Using jsI18n means that the client will have to download (at least)
         one additional file. If your site is very big, your translation files
         will likely be so too, which will make page download slower. 
       </dd>
     </dl>
-
-    With the above (possible) limitations, why use jsI18n at all?
+    <div data-trans="pros-cons-2">
+      With the above (possible) limitations, why use jsI18n at all?
+    </div>
     <dl>
-      <dt>No server side scripting required</dt>
-      <dd>
+      <dt data-trans="no-sss">No server side scripting required</dt>
+      <dd data-trans="no-sss-1">
         If you do not need server side scripting, and don't want
-        to deal with multiple HTML pages for each locale, JSI18n
+        to deal with multiple HTML pages for each locale, jsI18n
         is a nice solution.
       </dd>
-      <dt>It's simple and elegant!</dt>
-      <dd>
+      <dt data-trans="simple">It's simple and elegant!</dt>
+      <dd data-trans="simple-1">
         With jsI18n it is simple to add new locales and change
         translations without breaking markup. Additionally, jsI18n
         does not require any hacks, its just natural JS and HTML.
