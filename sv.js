@@ -2,67 +2,67 @@
   Swedish translation file
 */
 var translations = {
-    "title":"jsI18n - Läs mig",
-    "change-lang":"Byt språk",
+    "title":"jsI18n - LÃ¤s mig",
+    "change-lang":"Byt sprÃ¥k",
     "intro":
-      "jsI18n är ett enkelt javaskript-bibliotek för internationalsering"+
-      " på klientsidan.",
-    "howto-html":"Hur översätter jag mina HTML-sidor?",
+      "jsI18n Ã¤r ett enkelt javaskript-bibliotek fÃ¶r internationalsering"+
+      " pÃ¥ klientsidan.",
+    "howto-html":"Hur Ã¶versÃ¤tter jag mina HTML-sidor?",
     "howto-html-1":
-      "Det är enkelt. Länka till \"jsi18n.js\" och dina " + 
-      "språkfiler. Läggs sedan till <em>data-trans</em> attributet till de " +
-      "element vars innehåll skall översättas:",
+      "Det Ã¤r enkelt. LÃ¤nka till \"jsi18n.js\" och dina " + 
+      "sprÃ¥kfiler. LÃ¤ggs sedan till <em>data-trans</em> attributet till de " +
+      "element vars innehÃ¥ll skall Ã¶versÃ¤ttas:",
     "howto-html-2":
-      "Anropa sedan <em>jsI18n.processPage</em> när sidan har " +
-      "laddats färdigt. Du kan till exempel placera det i body-taggens onload"+
+      "Anropa sedan <em>jsI18n.processPage</em> nÃ¤r sidan har " +
+      "laddats fÃ¤rdigt. Du kan till exempel placera det i body-taggens onload"+
       "-attribut.",
     "howto-html-3":
       "<em>processPage</em> hittar texten associerad med nyckel" +
-      "ordet \"cat\" i översättningstabellen för valt språk och ersätter " +
-      "taggens innehåll med denna. Om ingen översättning finns, eller om " +
-      "inget språk har valts används ursprungsvärdet.",
-    "howto-html-4":"Se källkoden till denna sida för ett fungerande exempel!",
-    "howto-js":"Kan jag översätta text från ett skript?",
-    "howto-change-locale":"Hur byter jag språk",
+      "ordet \"cat\" i Ã¶versÃ¤ttningstabellen fÃ¶r valt sprÃ¥k och ersÃ¤tter " +
+      "taggens innehÃ¥ll med denna. Om ingen Ã¶versÃ¤ttning finns, eller om " +
+      "inget sprÃ¥k har valts anvÃ¤nds ursprungsvÃ¤rdet.",
+    "howto-html-4":"Se kÃ¤llkoden till denna sida fÃ¶r ett fungerande exempel!",
+    "howto-js":"Kan jag Ã¶versÃ¤tta text frÃ¥n ett skript?",
+    "howto-change-locale":"Hur byter jag sprÃ¥k",
     "change-locale-content":
       "Anropa <em>jsI18n.setLocale(locale)</em>. Det " +
-      " är upp till dig hur du lagrar språkvärdet (locale).",
-    "locale-files":"Språkfiler",
+      " Ã¤r upp till dig hur du lagrar sprÃ¥kvÃ¤rdet (locale).",
+    "locale-files":"SprÃ¥kfiler",
     "locale-files-1":
-      "Språkfilerna är javaskriptfiler som anropar funktionen "+
-      "<em>jsI18n.addLocale(locale, translations)</em>, där <em>locale</em> " +
-      "identifierar språket, och <em>translations</em> är en associativ array"+
-      " som mappar nycklar till översättningar.",
-    "locale-files-2":"Vårt katt-exempel skulle kunna använda följande kod:",
+      "SprÃ¥kfilerna Ã¤r javaskriptfiler som anropar funktionen "+
+      "<em>jsI18n.addLocale(locale, translations)</em>, dÃ¤r <em>locale</em> " +
+      "identifierar sprÃ¥ket, och <em>translations</em> Ã¤r en associativ array"+
+      " som mappar nycklar till Ã¶versÃ¤ttningar.",
+    "locale-files-2":"VÃ¥rt katt-exempel skulle kunna anvÃ¤nda fÃ¶ljande kod:",
     "locale-files-3":
-      "<strong>Obs!</strong> Inkludera språkfilerna i din HTML" +
+      "<strong>Obs!</strong> Inkludera sprÃ¥kfilerna i din HTML" +
       " <em>efter</em> \"jsI18n.js\".",
-    "pros-cons":"Fördelar och nackdelar",
+    "pros-cons":"FÃ¶rdelar och nackdelar",
     "pros-cons-1":
-      "Du bör betänka följande saker innan du använder jsI18n för " + 
+      "Du bÃ¶r betÃ¤nka fÃ¶ljande saker innan du anvÃ¤nder jsI18n fÃ¶r " + 
       "internationalisering",
     "pros-cons-2":
-      "Med tanke på ovanstående (möjliga) begräsningar, varför använda " +
-      "jsI18n överhuvudtaget?",
-    "js-turned-off":"Vad händer med användare med javaskript avstängt?",
+      "Med tanke pÃ¥ ovanstÃ¥ende (mÃ¶jliga) begrÃ¤sningar, varfÃ¶r anvÃ¤nda " +
+      "jsI18n Ã¶verhuvudtaget?",
+    "js-turned-off":"Vad hÃ¤nder med anvÃ¤ndare med javaskript avstÃ¤ngt?",
     "js-turned-off-1":
-      "Om din sida redan kräver javaskript har du förmodligen redan hanterat" +
-      " detta.<br><br/>Om inte, kommer sådana användare enbart kunna använda" +
-      " sidan på originalspråket (eftersom taggarnas urpsrungstext visas).",
-    "slower-download":"Längre nedladdningstid" ,
+      "Om din sida redan krÃ¤ver javaskript har du fÃ¶rmodligen redan hanterat" +
+      " detta.<br><br/>Om inte, kommer sÃ¥dana anvÃ¤ndare enbart kunna anvÃ¤nda" +
+      " sidan pÃ¥ originalsprÃ¥ket (eftersom taggarnas urpsrungstext visas).",
+    "slower-download":"LÃ¤ngre nedladdningstid" ,
     "slower-download-1":
-      "När du använder jsI18n kommer klienten behöva ladda ner åtminstone en "+
-      "ytterligare fil. Om din sida är mycket stor, är dina översättningsfiler"+
-      " mest troligt detsamma, vilket resulterar i långsammare sidnedladdning.",
+      "NÃ¤r du anvÃ¤nder jsI18n kommer klienten behÃ¶va ladda ner Ã¥tminstone en "+
+      "ytterligare fil. Om din sida Ã¤r mycket stor, Ã¤r dina Ã¶versÃ¤ttningsfiler"+
+      " mest troligt detsamma, vilket resulterar i lÃ¥ngsammare sidnedladdning.",
     "no-sss":"Ingen server side scripting",
     "no-sss-1":
-      "Om du inte är i behov av server side scripting och inte vill hantera " +
-      "flera HTML-sidor per språk, så är jsI18n en trevlig lösning.",
-    "simple":"Det är enkelt och elegant!",
+      "Om du inte Ã¤r i behov av server side scripting och inte vill hantera " +
+      "flera HTML-sidor per sprÃ¥k, sÃ¥ Ã¤r jsI18n en trevlig lÃ¶sning.",
+    "simple":"Det Ã¤r enkelt och elegant!",
     "simple-1":
-      "Med hjälp av jsI18n är det enkelt att lägga till nya språk och ändra " +
-      "översättningar utan att förstöra din HTML. Utöver detta kräver inte " +
-      "jsI18n några fulhack, det är helt vanlig HTML och javaskript." 
+      "Med hjÃ¤lp av jsI18n Ã¤r det enkelt att lÃ¤gga till nya sprÃ¥k och Ã¤ndra " +
+      "Ã¶versÃ¤ttningar utan att fÃ¶rstÃ¶ra din HTML. UtÃ¶ver detta krÃ¤ver inte " +
+      "jsI18n nÃ¥gra fulhack, det Ã¤r helt vanlig HTML och javaskript." 
     }
 
 //Add locale
