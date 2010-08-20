@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>jsI18n-Readme</title>
+    <style type="text/css">
+      p {max-width:40em}
+      dt {font-weight:bold}
+    </style>
+  </head>
+  <body>
+    <h1>jsI18n</h1>
+    <p>
+      jsI18n is a simple javascript library for putting I18n on the client side.
+    </p>
+
+    <h2>How do I use it for my HTML?</h2>
+    <p>
+      It's simple. Just put in a reference to "jsi18n.js" and your locale files,
+      and add the <em>data-trans</em> attribute to the elements whose contents
+      you want to translate, like this:
+    </p>
+    <p> 
+      &lt;div <strong>data-trans="cat"</strong>&gt;Default value&lt;div&gt;
+    </p>
+    <p>
+      Then call "jsI18n.processPage" after the page has finished loading.
+      A simple way to do this is to put the code in the <em>onload </em>event of
+      the body tag.
+    </p>
+    <p>
+      This will look up the relevant text for the keyword "cat" in the
+      translation table for the current locale and replace the contents
+      of the tag with that text. If the keyword is undefined, or if the 
+      current locale is not set, the default value (original content) will
+      be used.
+    </p>
+    <p>
+      To get a full example, check out the source of this readme!
+    </p>
+    <h2>How do I use it for my javascript?</h2>
+    <p>
+      <code>
+        var cat = jsI18n.translate("cat") <br/>
+        cat == jsI18n.t("cat") //Short form
+      </code>
+    </p>
+    <h2>How do I change the current locale?</h2>
+    <p>
+      Just call <em>jsI18n.setLocale(locale)</em>. It is up to you how to
+      retrieve the locale value.
+    </p>
+    <h2>What about the locale files?</h2>
+    <p>
+      The locale files are just javascript files that call
+      the function <em>jsI18n.addLocale(locale, translations)</em>,
+      where locale is a string used as an identifier, and translations
+      is an associative array mapping keys to actual translations.
+    </p>
+    <p> 
+      So, using our cat example we would put the following in sv.js:
+    </p>
+    <p>
+      <code>
+        var translations = {"cat":"Katt", "dog":"Hund"}
+        <br/><br/>
+        jsI18n.addLocale("sv", translations")
+      </code>
+    </p>
+    <p>
+      <strong>Important:</strong>Make sure you include your locale files into
+        your HTML <em>after</em> you have included "jsi18n.js".
+    </p>
+    <h1>Pros and Cons</h1>
+    <p>
+      There are a few things you should think about before using this approach
+      for internationalization.
+    </p>
+    <dl>
+      <dt>What if javascript is turned off?</dt>
+      <dd>
+        If your site depends on JS anyway, this does not matter as much
+        as you have probably thought about it anyway.<br/><br/>
+        If it doesn't, using jsI18n simply means your site will only
+        be available in the default locale (as the default text will be used).
+      </dd>
+      <dt>Slower page download</dt>
+      <dd>
+        Using jsI18n means that the client will have to download (at least)
+        one additional file. If your site is very big, your translation files
+        will likely be so too, which will make page download slower. 
+      </dd>
+    </dl>
+
+    With the above (possible) limitations, why use jsI18n at all?
+    <dl>
+      <dt>No server side scripting required</dt>
+      <dd>
+        If you do not need server side scripting, and don't want
+        to deal with multiple HTML pages for each locale, JSI18n
+        is a nice solution.
+      </dd>
+      <dt>It's simple and elegant!</dt>
+      <dd>
+        With jsI18n it is simple to add new locales and change
+        translations without breaking markup. Additionally, jsI18n
+        does not require any hacks, its just natural JS and HTML.
+      </dd>
+    </dl>
+  </body>
+</html>
