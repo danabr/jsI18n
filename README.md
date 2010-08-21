@@ -21,6 +21,16 @@ jsI18n will replace the content of the div-tag with the text associated
 with the key "cat". If no applicable translation exists, the original 
 element content will be preserved.
 
+###Attribute translation
+
+You can also translate the contents of multiple attributes by specifiying
+`attribute=key` pairs in the *data-trans* attribute:
+
+    <textarea alt="", data-trans="alt=altkey;html=contentkey">Default</textarea>
+
+Note the special `html` key. It is used to specify the key for the content of
+the tag when this notation is used.
+
 ##Translating with JS
 
     js1I8n.t("cat") == jsI18n.translate("cat") //Use the one you like (t is faster, though).

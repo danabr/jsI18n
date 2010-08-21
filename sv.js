@@ -3,7 +3,7 @@
 */
 var translations = {
     "title":"jsI18n - Läs mig",
-    "change-lang":"Byt språk",
+    "change-lang":"Byt språk:",
     "intro":
       "jsI18n är ett enkelt javaskript-bibliotek för internationalsering"+
       " på klientsidan.",
@@ -13,7 +13,7 @@ var translations = {
       "språkfiler. Läggs sedan till <em>data-trans</em> attributet till de " +
       "element vars innehåll skall översättas:",
     "howto-html-2":
-      "Anropa sedan <em>jsI18n.processPage</em> när sidan har " +
+      "Anropa sedan <code>jsI18n.processPage</code> när sidan har " +
       "laddats färdigt. Du kan till exempel placera det i body-taggens onload"+
       "-attribut.",
     "howto-html-3":
@@ -22,10 +22,21 @@ var translations = {
       "taggens innehåll med denna. Om ingen översättning finns, eller om " +
       "inget språk har valts används ursprungsvärdet.",
     "howto-html-4":"Se källkoden till denna sida för ett fungerande exempel!",
+    "trans-attr":"Attributöversättningar",
+    "trans-attr-1":
+      "Ibland vill man översätta attributvärden, så som <em>alt</em> och <em>" +
+      "title</em> för input-element. Detta åstadkommer du att ange <em>" + 
+      "attributnamn</em>=<em>nyckel</em> i <em>data-trans</em>-attributet." +
+      "Du kan översätta flera attribut genom att separera dem med semikolon:",
+    "trans-attr-2":
+      "Detta fungerar för alla typer av element, inte bara " +
+      "input- och img-element.<br/><br/><strong>Obs!</strong> Med denna " +
+      "notation anges nyckel för att översätta elementets innehåll med " +
+      "<code>html=key</code> i <em>data-trans</em>.",
     "howto-js":"Kan jag översätta text från ett skript?",
     "howto-change-locale":"Hur byter jag språk",
     "change-locale-content":
-      "Anropa <em>jsI18n.setLocale(locale)</em>. Det " +
+      "Anropa <code>jsI18n.setLocale(locale)</code>. Det " +
       " är upp till dig hur du lagrar språkvärdet (locale).",
     "locale-files":"Språkfiler",
     "locale-files-1":

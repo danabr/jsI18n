@@ -1,6 +1,7 @@
 /**
   jsI18n library.
   Simple client side internationalization.
+  Version: 1.1
   Copyright (c) Daniel Abrahamsson 2010
 **/
 
@@ -32,17 +33,46 @@ function JsI18n()
     } 
 
     /*
-      Private helper for replacing
-      the contents of the node with
-      the translation identified by the
-      given key. If no translation exists,
-      the original content is used.
+      Translates tag contents and
+      attributes depending on the
+      value of key.
     */
     function translateTag(node, key)
     {
-      var translation = jsI18n.t(key) //HACK! (this.t does not work)
-      if(translation != undefined)
-        node.innerHTML = translation
+      if(key.indexOf("=") == -1) //Simple key
+        translateNodeContent(node, key)
+      else //Attribute/key pairs
+      {
+        var parts = key.toLowerCase().split(";")
+        
+        for(var i = 0; i < parts.length; i++)
+        {
+          var pair = parts[i].split("=")
+          var attr = pair[0].replace(/\s*(\w+)\s*/gi, "$1") //trim
+          var k = pair[1].replace(/\s*(\.+)\s*/gi, "$1")
+          
+          if(attr == "html")
+            translateNodeContent(node, k)
+          else
+            translateNodeContent(node.attributes[attr], k)
+        }
+      }
+    }
+    
+    /**
+      Replace the content of the given node
+      if there is a translation for the given key.
+    **/
+    function translateNodeContent(node, key)
+    {
+      var translation = jsI18n.t(key) //Hack, "this" does not work
+      if(node != null && translation != undefined) 
+      {
+        if(node.nodeType == 1) //Element
+          node.innerHTML = translation
+        else if(node.nodeType == 2) //Attribute
+          node.value = translation
+      }
     }
   }
 }

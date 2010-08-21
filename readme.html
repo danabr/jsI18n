@@ -16,7 +16,7 @@
       }
     </script>
     <style type="text/css">
-       body {max-width:40em}
+       body {max-width:42em}
       dt {font-weight:bold}
       dd {margin-top:0.25em; margin-bottom:0.25em}
     </style>
@@ -41,9 +41,9 @@
       &lt;div <strong>data-trans="cat"</strong>&gt;Default value&lt;div&gt;
     </p>
     <p data-trans="howto-html-2">
-      Then call <em>jsI18n.processPage</em> after the page has finished loading.
-      A simple way to do this is to put the code in the <em>onload </em>event of
-      the body tag.
+      Then call <code>jsI18n.processPage</code> after the page has finished 
+      loading.  A simple way to do this is to put the code in the 
+      <em>onload </em>event of the body tag.
     </p>
     <p data-trans="howto-html-3">
       This will look up the relevant text for the keyword "cat" in the
@@ -52,8 +52,31 @@
       current locale is not set, the default value (original content) will
       be used.
     </p>
+    
     <p data-trans="howto-html-4">
       To get a full example, check out the source of this readme!
+    </p>
+
+    <h3 data-trans="trans-attr">Translating attributes</h3>
+    <p data-trans="trans-attr-1">
+      Sometimes you want to translate element attributes,
+      such as the <em>alt</em> and <em>title</em> attributes for images or
+      the <em>value</em> attribute for input elements. The proper way to do
+      this is to specify <em>attribute_name</em>=<em>key</em> in the
+      <em>data-trans</em> attribute. Multiple attribute translations can
+      be specified by separating the assignments by a semicolon:
+    </p>
+    
+    <code>
+      &lt;img src="..." alt="myalt" value="myvalue" data-trans="alt=altkey;value=valkey"/&gt;
+    </code> 
+    
+    <p data-trans="trans-attr-2">
+      This works for any kind of element, not just input and img elements.
+      <br/><br/>
+      <strong>Important!</strong> Using this notation, the content of the
+      element is translated by specifying <code>html=key</code> in
+      <em>data-trans</em>.
     </p>
     <h2 data-trans="howto-js">How do I use it for my javascript?</h2>
     <p>
@@ -64,13 +87,13 @@
     </p>
     <h2 data-trans="howto-change-locale">How do I change the current locale?</h2>
     <p data-trans="change-locale-content">
-      Just call <em>jsI18n.setLocale(locale)</em>. It is up to you how to
+      Just call <code>jsI18n.setLocale(locale)</code>. It is up to you how to
       retrieve the locale value.
     </p>
     <h2 data-trans="locale-files">What about the locale files?</h2>
     <p data-trans="locale-files-1">
       The locale files are just javascript files that call
-      the function <em>jsI18n.addLocale(locale, translations)</em>,
+      the function <code>jsI18n.addLocale(locale, translations)</code>,
       where locale is a string used as an identifier, and translations
       is an associative array mapping keys to actual translations.
     </p>
