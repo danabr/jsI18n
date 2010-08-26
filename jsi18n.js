@@ -1,7 +1,7 @@
 /**
   jsI18n library.
   Simple client side internationalization.
-  Version: 1.1
+  Version: 1.1.1
   Copyright (c) Daniel Abrahamsson 2010
 **/
 
