@@ -69,10 +69,11 @@ function JsI18n()
       {
         if(node.nodeType == 1) //Element
         {
-          if(node.text == undefined) //Defined for title, etc
+          try {  
             node.innerHTML = translation
-          else
-            node.firstChild.nodeValue = translation
+          } catch(e) {
+            node.text = translation
+          }
         }
         else if(node.nodeType == 2) //Attribute
           node.value = translation
