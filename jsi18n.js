@@ -18,7 +18,6 @@ function JsI18n()
   {
     if(node != undefined)
     {
-      //Translate
       if(node.nodeType == 1) //Element node
       {
         var key = node.attributes["data-trans"]
@@ -69,7 +68,12 @@ function JsI18n()
       if(node != null && translation != undefined) 
       {
         if(node.nodeType == 1) //Element
-          node.innerHTML = translation
+        {
+          if(node.text == undefined) //Defined for title, etc
+            node.innerHTML = translation
+          else
+            node.firstChild.nodeValue = translation
+        }
         else if(node.nodeType == 2) //Attribute
           node.value = translation
       }
