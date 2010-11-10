@@ -7,6 +7,7 @@
     <title data-trans="title">jsI18n - Readme</title> <!-- Ignored by IE -->
     <script src="jsi18n.js"></script>
     <script src="sv.js"></script>
+    <script src="en.js"></script>
     <script type="text/javascript">
       //Changes locale
       function changeLocale(locale)
@@ -148,5 +149,14 @@
         does not require any hacks, its just natural JS and HTML.
       </dd>
     </dl>
+    <div id="process-node">
+      <h2 data-trans="process-node">Translating individual DOM nodes</h2>
+      <p data-trans="process-node-1">
+        You can translate individual nodes (parts of the page) by calling
+        <code>jsI18n.processNode(node)</code>, e.g. 
+        <code>jsI18n.processNode(document.getElementById('to_translate'))</code>. 
+        <a href="javascript:jsI18n.setLocale('sv'); jsI18n.processNode(document.getElementById('process-node'))">Test it!</a>
+      </p>
+    </div>
   </body>
 </html>

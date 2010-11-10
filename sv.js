@@ -73,7 +73,16 @@ var translations = {
     "simple-1":
       "Med hjälp av jsI18n är det enkelt att lägga till nya språk och ändra " +
       "översättningar utan att förstöra din HTML. Utöver detta kräver inte " +
-      "jsI18n några fulhack, det är helt vanlig HTML och javaskript." 
+      "jsI18n några fulhack, det är helt vanlig HTML och javaskript.",
+      "process-node": "Översätta enskilda DOM-noder",
+      "process-node-1": 
+        "Du översätter individual noder genom att använda " +
+        "<code>jsI18n.processNode(node)</code>. Exempel: " + 
+        "<code>jsI18n.processNode(document.getElementById('to_translate'))</code>. " + 
+        "<a href=\"javascript:jsI18n.setLocale('en'); " +
+        "jsI18n.processNode(document.getElementById('process-node'))\">" +
+        "Testa det!</a>",
+      "test-it": "Testa det"
     }
 
 //Add locale

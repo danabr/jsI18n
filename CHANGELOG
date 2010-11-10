@@ -1,3 +1,5 @@
+1.1.2 - November 10 2010
+  * Added example of translating individual nodes
 1.1.1 - August 26 2010
   * Bugfix: Webkit browsers don't accept innerHTML on the title attribute.
 1.1 - August 21 2010

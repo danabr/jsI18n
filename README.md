@@ -52,6 +52,8 @@ An example:
 ###Changing locale
     jsI18n.setLocale("sv")
     jsI18n.processPage() //Retranslate page
+    //or translate an individual node
+    jsI18n.processNode(document.getElementById('myId'));
 
 ###Live example
 
