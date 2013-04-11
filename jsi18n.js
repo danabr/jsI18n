@@ -11,6 +11,25 @@ function JsI18n()
   this.locales = new Array()  //Available locales
 
   /*
+    Method for automatically detecting the language, does not work in every browser.
+  */
+  this.detectLanguage = function(successCB, errorCB) {
+    // Phonegap browser detection
+    if (navigator.globalization !== null && navigator.globalization !== undefined) {
+      navigator.globalization.getPreferredLanguage(
+        function (language) { successCB(language); },
+        function (error) { errorCB(error); }
+      );
+    //Normal browser detection
+    } else {
+      if(window.navigator.language !== null && window.navigator.language !== undefined) {
+          successCB(window.navigator.language);
+      }
+    }
+  }
+
+
+  /*
     Helper for translating a node
     and all its child nodes.
   */

@@ -55,6 +55,18 @@ An example:
     //or translate an individual node
     jsI18n.processNode(document.getElementById('myId'));
 
+### Automatic language detection
+    jsI18n.detectLanguage()
+is used to detect your preferred language, it works with both normal browser language detection and Phonegap globalization.
+
+You can use `jsI18n.setLocale()` as the successCB. 
+
+There are some issues:
+
+- Always "en-us" by default in Safari on all systems.
+- Defaults to "en-us" in Chrome on all systems for English unless you install your local dictionary and drag it to the top.
+- Always just "en" in Opera
+
 ###Live example
 
 A live example is provided in readme.html.
